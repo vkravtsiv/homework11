@@ -21,7 +21,8 @@ public class HomeWork11 {
     1. Ivan, 3. Peter... лише з тими іменами, що стоять під непарним індексом (1, 3 тощо)
      */
     public static String oddIndexesList(List<String> listNames) {
-        return IntStream.range(0, namesList.size()).boxed().filter(i -> i % 2 == 1).map(i -> i + "." + namesList.get(i)).collect(Collectors.joining(", "));
+        return IntStream.range(0, namesList.size()).boxed().filter(i -> i % 2 == 1).map(i -> i + "."
+                + namesList.get(i)).collect(Collectors.joining(", "));
     }
 
     /*
@@ -30,7 +31,8 @@ public class HomeWork11 {
     Повертає список цих рядків у верхньому регістрі, і відсортованих за спаданням (від Z до A).
     */
     public static List<String> toUpperCaseAndSort(List<String> namesList) {
-        return namesList.stream().map(strings -> strings.toUpperCase()).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        return namesList.stream().map(strings -> strings.toUpperCase())
+                .sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
     /*
@@ -107,6 +109,7 @@ public class HomeWork11 {
 
         lcg(seed,a,c,m);
 //        System.out.println(lcg(seed,a,c,m));
+        System.out.println();
 
         //Завдання 5.
         System.out.println("zip(firstStream,firstStream).collect(Collectors.toList()) = "
