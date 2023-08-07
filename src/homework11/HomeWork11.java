@@ -63,7 +63,7 @@ public class HomeWork11 {
     static List<Long> lcg(long seed, long a, long c, long m) {
 
         final List<Long> randomnumbers = Stream.iterate(seed, x -> (a * x + c) % m)
-//                .limit(10)
+                .limit(100)
                 .peek(System.out::println)
                 .collect(Collectors.toList());
         return randomnumbers;
