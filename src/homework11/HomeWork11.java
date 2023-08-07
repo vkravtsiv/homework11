@@ -40,13 +40,15 @@ public class HomeWork11 {
     Є масив:["1, 2, 0", "4, 5"] Необхідно отримати з масиву всі числа,
     і вивести їх у відсортованому вигляді через кому ,, наприклад: "0, 1, 2, 4, 5"
      */
-    public static List<String> takeNumbers(String[]arr) {
+    public static String takeNumbers(String[]arr) {
         List<String> list=Arrays.asList(arr);
         return list.stream()
-                .map(string->Arrays.asList(string.split(",")))
+                .map(string->Arrays.asList(string.split(" *, *")))
                 .flatMap(number->number.stream())
-                .collect(Collectors.toList());
-
+                .mapToInt(str->Integer.valueOf(str))
+                .sorted()
+                .mapToObj(x->String.valueOf(x))
+                .collect(Collectors.joining(", "));
     }
     /*
     Завдання 4.
@@ -96,8 +98,8 @@ public class HomeWork11 {
         System.out.println();
 
         //Завдання 3
-        for (String str: takeNumbers(arr))
-        System.out.print(str+", ");
+        System.out.println(takeNumbers(arr));
+//        System.out.print(str+", ");
         System.out.println("\b\b");
 
         //Завдання 4
